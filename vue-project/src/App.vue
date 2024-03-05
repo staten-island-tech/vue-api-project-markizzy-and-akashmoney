@@ -83,3 +83,15 @@ nav a:first-of-type {
   }
 }
 </style>
+<template>
+  <BarChart />
+</template>
+
+<script setup> 
+import BarChart from 'path/to/component/BarChart'
+import { Bar } from 'vue-chartjs'
+export default {
+  name: 'App',
+  components: { BarChart }
+}
+</script>
