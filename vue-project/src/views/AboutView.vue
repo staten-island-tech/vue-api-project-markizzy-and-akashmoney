@@ -1,15 +1,23 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div>
+
   </div>
 </template>
 
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+<script setup>
+import {ref, onMounted } from "vue";
+const apiURL = ref("")
+async function getSOMETHING() {
+  let res = await fetch //(link)
+  let data = await res.json();
+  apiURL.value = data.results;
 }
+
+onBeforeMounted(() => {
+  getSOMETHING();
+})
+</script>
+
+<style scoped>
+
 </style>
