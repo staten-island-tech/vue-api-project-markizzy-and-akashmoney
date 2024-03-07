@@ -29,3 +29,19 @@
   }
   </script>
   
+
+
+  <script setup>
+import{ref , onMounted, onBeforeMount} from 'vue';
+const apiUrel=ref("https://data.cityofnewyork.us/api/odata/v4/uip8-fykc")
+async function getData(){
+  let res= await fetch(apiUrel);
+  let data = await res.json()
+  apiUrel.value= data.results
+}
+
+onBeforeMounted(()=>{
+  getData();
+})
+
+</script>
