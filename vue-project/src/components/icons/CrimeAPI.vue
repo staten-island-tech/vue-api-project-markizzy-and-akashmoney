@@ -5,7 +5,7 @@
 </template>
 
 <script>
-   import {ref, onMounted } from "vue";
+import {ref, onMounted } from "vue";
 const apiURL = ref("https://data.cityofnewyork.us/resource/uip8-fykc.json")
 async function getData() {
   let res = await fetch(apiURL)
