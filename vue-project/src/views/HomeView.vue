@@ -4,10 +4,8 @@
   </div>
 </template>
 
-<script>
-  export default {
-    
-  }
+<script setup>
+import {Bar} from './components/icons/BarChart.vue'
 </script>
 
 <style scoped>
