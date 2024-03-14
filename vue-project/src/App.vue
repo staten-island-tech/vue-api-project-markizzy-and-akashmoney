@@ -1,6 +1,7 @@
 
 <template>
-  <BarChart />
+<BarChart 
+/>
 </template>
 
 <script>
