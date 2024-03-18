@@ -21,6 +21,7 @@ onMounted (() => {
   getData();
 })
 
+
 </script>
 
 <style scoped>
