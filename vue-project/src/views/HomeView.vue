@@ -8,10 +8,9 @@
 
 </template>
 
+<script setup>
 
 
-<script>
-//https://data.cityofnewyork.us/resource/uip8-fykc.json
 const api= "https://data.cityofnewyork.us/resource/uip8-fykc.json"
 import { ref, onMounted } from 'vue';
 let apiURL = ref('');
@@ -27,9 +26,8 @@ onMounted (() => {
 })
 
 
-
 </script>
 
 <style scoped>
 
-</style>
+</style>  
