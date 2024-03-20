@@ -1,9 +1,3 @@
-<script setup>
-import { Bar } from 'vue-chartjs'
-
-</script>
-
-
 <template>
   <Bar
     id="my-chart-id"
