@@ -28,3 +28,19 @@
     }
   }
   </script>
+
+<script setup>
+
+const api = "https://data.cityofnewyork.us/resource/uip8-fykc.json"
+
+import {ref , onMounted } from 'vue';
+let apiUrl = ref('')
+async function getData (){
+  let res = await fetch(api)
+  let data = await res.json();
+  console.log(data)
+  apiUrl.value = data;
+};
+const data = onMounted (()=> {
+  getData();
+})</script>
