@@ -47,6 +47,7 @@ input {
 h1{
   font-size: var(--h1);
   font-family: 'Fugaz One', sans-serif;
+  margin-top: 1000px;
 }
 
 
@@ -56,3 +57,4 @@ h1{
 }
 
 </style>
+
