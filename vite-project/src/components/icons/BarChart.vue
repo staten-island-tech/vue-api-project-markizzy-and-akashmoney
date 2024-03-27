@@ -1,7 +1,9 @@
 <template>
-  <Bar 
-  :data="chartData" 
-  :options="chartOptions" />
+  <Bar
+    id="my-chart-id"
+    :options="chartOptions"
+    :data="chartData"
+  />
 </template>
 
 <script>
@@ -13,22 +15,22 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   name: 'BarChart',
   components: { Bar },
-  props: {
-    chartData: {
-        type: Object,
-        required: true
+  data() {
+    return {
+      chartData: {
+        labels: [ 'January', 'February', 'March' ],
+        datasets: [ { data: [40, 20, 12] } ]
       },
-    chartOptions: {
-      type: Object,
-      default: () => {}
+      chartOptions: {
+        responsive: true
+      }
     }
   }
 }
 </script>
-
   <script setup>
   const api= "https://data.cityofnewyork.us/resource/uip8-fykc.json"
-import { ref, onMounted, defineProps } from 'vue';
+import { ref, onMounted  } from 'vue';
 let apiURL = ref('');
 async function getData() {
   let res = await fetch(api)
@@ -39,4 +41,4 @@ async function getData() {
  onMounted (() => {
   getData();
 
-}) </script>
+})</script>
