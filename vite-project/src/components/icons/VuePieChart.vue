@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div class="container mt-5">
         <h2 class="mb-4 text-center">Vue 3 Vuechart Js 5 Pie Chart Demo</h2>
         <Pie id="my-chart-id" :options="chartOptions" :data="chartData" />
@@ -30,4 +30,4 @@ export default {
         }
     }
 }
-</script>
+</script> -->
