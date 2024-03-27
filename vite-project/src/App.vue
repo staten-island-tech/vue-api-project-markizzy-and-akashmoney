@@ -10,7 +10,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <script>
 import BarChart from './components/icons/BarChart.vue'
-import VuePieChart from './components/icons/VuePieChart.vue'
 
 export default {
   name: 'App',
