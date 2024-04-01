@@ -4,21 +4,15 @@ import BarChart from '@/components/icons/BarChart.vue'
 </script>
 
 <template>
- <div>
-<BarChart
-
-
-
-/>
-
-
- </div>
- 
- 
- 
- 
- 
- <main>
-    <TheWelcome />
-  </main>
+  <div class="container">
+    <h1 class="title">Hello, Vue!</h1>
+  </div>
 </template>
+
+<script>
+import './style.css'; // Import external stylesheet
+
+export default {
+  // Component logic
+};
+</script>
