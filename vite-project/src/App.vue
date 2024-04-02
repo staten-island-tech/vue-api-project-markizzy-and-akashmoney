@@ -3,9 +3,6 @@ import { RouterLink, RouterView } from 'vue-router'
 
 </script>
 <template>
-<<<<<<< HEAD
-  
-=======
  <header>
     <div>
 
@@ -15,7 +12,6 @@ import { RouterLink, RouterView } from 'vue-router'
       </nav>
     </div>
     </header>
->>>>>>> main
   <BarChart />
  
 </template>
