@@ -1,10 +1,9 @@
 <template>
-  <div class="container">
-    <Bar id="my-chart-id"
+  <Bar
+    id="my-chart-id"
     :options="chartOptions"
-    v-if="loaded" 
- :data="chartData" /> />
-  </div>
+    :data="chartData"
+  />
 </template>
 
 <script>
@@ -16,24 +15,19 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   name: 'BarChart',
   components: { Bar },
-  data: () => ({
-    loaded: false,
-    chartData: null
-  }),
-  async mounted () {
-    this.loaded = false
-
-    try {
-      const { userlist } = await fetch('/api/userlist')
-      this.chartdata = userlist
-
-      this.loaded = true
-    } catch (e) {
-      console.error(e)
+  data() {
+    return {
+      chartData: {
+        labels: [ 'January', 'February', 'March' ],
+        datasets: [ { data: [40, 20, 12] } ]
+      },
+      chartOptions: {
+        responsive: true
+      }
     }
   }
 }
-  </script>
+</script>
 
 <script setup>
 const api = "https://data.cityofnewyork.us/resource/uip8-fykc.json"
@@ -41,12 +35,12 @@ const api = "https://data.cityofnewyork.us/resource/uip8-fykc.json"
 import {ref , onMounted } from 'vue';
 let apiUrl = ref('')
 async function getData (){
-  let res = await fetch(api)
-  let data = await res.json();
-  console.log(data)
-  apiUrl.value = data;
+let res = await fetch(api)
+let data = await res.json();
+console.log(data)
+apiUrl.value = data;
 };
 const data = onMounted (()=> {
-  getData();
+getData();
 })</script>
 
