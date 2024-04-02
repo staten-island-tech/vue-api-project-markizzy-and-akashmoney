@@ -29,7 +29,8 @@ export default {
   }
 }
 </script>
-  <script setup>
+  <script>
+  function Asas(){
   const api= "https://data.cityofnewyork.us/resource/uip8-fykc.json"
 import { ref, onMounted  } from 'vue';
 let apiURL = ref('');
@@ -42,4 +43,4 @@ async function getData() {
  onMounted (() => {
   getData();
 
-})</script>
+})}</script>
