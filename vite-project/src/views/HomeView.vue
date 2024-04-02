@@ -1,5 +1,16 @@
+<<<<<<< HEAD
+=======
+<script setup>
+import TheWelcome from '../components/TheWelcome.vue';
+import BarChart from '@/components/icons/BarChart.vue'
+</script>
+>>>>>>> main
+
+
+
 
 <template>
+<<<<<<< HEAD
   
 </template>
 
@@ -58,3 +69,16 @@ h1{
 
 </style>
 
+=======
+  <div class = "page">
+    <h1>Arrest Data</h1>
+  </div>
+</template>
+
+
+<style>
+.h1{
+  color:red
+}
+</style>
+>>>>>>> main

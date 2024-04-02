@@ -32,12 +32,19 @@ export default {
       console.error(e)
     }
   }
+<<<<<<< HEAD
 }
 </script>
  
 <script setup>
 
 const api = "https://data.cityofnewyork.us/resource/uip8-fykc.json";
+=======
+  </script>
+
+<script setup>
+const api = "https://data.cityofnewyork.us/resource/uip8-fykc.json"
+>>>>>>> main
 
 import {ref , onMounted } from 'vue';
 let apiUrl = ref('')
@@ -49,4 +56,9 @@ async function getData (){
 };
 const data = onMounted (()=> {
   getData();
+<<<<<<< HEAD
 })</script>
+=======
+})</script>
+
+>>>>>>> main

@@ -3,7 +3,19 @@ import { RouterLink, RouterView } from 'vue-router'
 
 </script>
 <template>
+<<<<<<< HEAD
   
+=======
+ <header>
+    <div>
+
+      <nav>
+        <RouterLink to="/">Home</RouterLink>
+        <RouterLink to="/about">About</RouterLink>
+      </nav>
+    </div>
+    </header>
+>>>>>>> main
   <BarChart />
  
 </template>
