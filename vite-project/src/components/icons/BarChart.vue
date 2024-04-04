@@ -27,9 +27,9 @@ export default {
 
     try {
       const { userlist } = await fetch("https://data.cityofnewyork.us/resource/uip8-fykc.json")
-
-
-      this.chartdata = userlist
+      const {data} = userlist.json()
+    
+      this.chartdata = data
 
       this.loaded = true
     } catch (e) {
@@ -39,8 +39,8 @@ export default {
 }
 </script>
 
-  <script>
-  function Asas(){
+  <script> 
+   function Asas() {
   const api= "https://data.cityofnewyork.us/resource/uip8-fykc.json"
 import { ref, onMounted  } from 'vue';
 let apiURL = ref('');
@@ -53,4 +53,4 @@ async function getData() {
  onMounted (() => {
   getData();
 
-})}</script>
+})} </script>  
