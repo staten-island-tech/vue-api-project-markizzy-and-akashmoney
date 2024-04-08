@@ -1,46 +1,50 @@
 <template>
+  <div class="chart-container">
     <Bar
       id="my-chart-id"
       :options="chartOptions"
       :data="chartData"
+      :style="{width: '1000px', height: '1000px'}" 
     />
-  </template>
-  
-  <script>
-  import { Bar } from 'vue-chartjs'
-  import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
-  
-  ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-  
-  export default {
-    name: 'BarChart',
-    components: { Bar },
-    data() {
-      return {
-        chartData: {
-          labels: [ 'January', 'February', 'March' ],
-          datasets: [ { data: [40, 20, 12] } ]
-        },
-        chartOptions: {
-          responsive: true
-        }
-      }
-    }
-  }
-  </script>
+  </div>
+</template>
 
 <script setup>
-const api = "https://data.cityofnewyork.us/resource/uip8-fykc.json"
+import { ref, onMounted } from 'vue';
+import { Bar } from 'vue-chartjs';
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
-import {ref , onMounted } from 'vue';
-let apiUrl = ref('')
-async function getData (){
-  let res = await fetch(api)
-  let data = await res.json();
-  console.log(data)
-  apiUrl.value = data;
-};
-const data = onMounted (()=> {
-  getData();
-})</script>
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
+
+const apiUrl = "https://data.cityofnewyork.us/resource/uip8-fykc.json";
+const chartData = ref({
+  labels: [],
+  datasets: [{
+    label: 'Arrests',
+    borderWidth: 1,
+    data: []
+  }]
+});
+const chartOptions = ref({
+  responsive: true
+});
+
+onMounted(async () => {
+  try {
+    const res = await fetch(apiUrl);
+    const data = await res.json();
+    console.log(data);
+    const newData = {
+      labels: data.map(item => item.ofns_desc), // Assuming there's an 'arrest_date' property in each item
+      datasets: [{
+        label: 'Number of Arrests Per Year',
+        data: data.map(item => item.pd_cd) // Assuming there's an 'arrest_count' property in each item
+      }]
+    };
+    chartData.value = newData;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+});
+</script>
 
