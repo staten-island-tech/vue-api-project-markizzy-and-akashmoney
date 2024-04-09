@@ -35,7 +35,7 @@ onMounted(async () => {
     const data = await res.json();
     console.log(data);
     const newData = {
-      labels: data.map(item => item.ofns_desc), // Assuming there's an 'arrest_date' property in each item
+      labels: data.map(item => item.perp_race), // Assuming there's an 'arrest_date' property in each item
       datasets: [{
         label: 'Number of Arrests Per Year',
         data: data.map(item => item.pd_cd) // Assuming there's an 'arrest_count' property in each item
