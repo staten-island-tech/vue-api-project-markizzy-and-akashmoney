@@ -9,18 +9,26 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
+      
+     
       </nav>
     </div>
     </header>
   <BarChart />
+
 </template>
 
 <script>
 import BarChart from './components/icons/BarChart.vue'
+import { Bar, Pie } from 'vue-chartjs';
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
+
+
 
 export default {
   name: 'App',
-  components: { BarChart }
+  components: { BarChart },
+  
 }
 </script>
 <style scoped>
