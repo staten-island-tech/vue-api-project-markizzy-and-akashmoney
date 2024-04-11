@@ -17,4 +17,6 @@ import BarChart from '@/components/icons/BarChart.vue'
 .h1{
   color:red
 }
+
+
 </style>
