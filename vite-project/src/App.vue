@@ -9,7 +9,13 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-       
+        <router-link to="/pie-chart">
+      <v-card>
+        <v-card-title>Pie Chart Page</v-card-title>
+      
+      </v-card>
+    </router-link>
+    <router-view></router-view>
       </nav>
     </div>
     </header>
