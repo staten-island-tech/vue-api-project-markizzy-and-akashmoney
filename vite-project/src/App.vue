@@ -20,7 +20,7 @@
 <script>
 import BarChart from './components/icons/BarChart.vue'
 import PieChart from './views/PieChartPage.vue'
-import { Bar, Pie } from 'vue-chartjs';
+import { Bar, Pie, Doughnut} from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
 
@@ -28,9 +28,9 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 export default {
   name: 'App',
   components: { BarChart },
-  compontens: { PieChart }
-  
+
 }
+
 </script>
 <style scoped>
 header {

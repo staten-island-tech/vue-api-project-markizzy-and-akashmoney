@@ -4,9 +4,14 @@
   </div>
 </template>
 
+
 <script setup>
+
+
 import { ref, onMounted } from 'vue';
 import { Pie } from 'vue-chartjs';
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
+
 
 const chartData = ref({});
 const chartOptions = ref({
@@ -20,24 +25,28 @@ const chartOptions = ref({
   }
 });
 
+
 onMounted(async () => {
   try {
-    // Fetch data from API
+
+
     const response = await fetch('https://data.cityofnewyork.us/resource/uip8-fykc.json');
     const data = await response.json();
 
-    // Process data to get number of arrests per borough
+
+
+
     const boroughData = {};
     data.forEach(item => {
       const borough = item.arrest_boro;
-      const pdCd = parseInt(item.pd_cd) || 0; // Ensure pd_cd is a number, default to 0 if not
+      const pdCd = parseInt(item.pd_cd) || 0;
       if (!boroughData[borough]) {
         boroughData[borough] = 0;
       }
       boroughData[borough] += pdCd;
     });
 
-    // Prepare data for the chart
+
     chartData.value = {
       labels: Object.keys(boroughData),
       datasets: [{
@@ -60,6 +69,7 @@ onMounted(async () => {
 });
 </script>
 
+
 <script>
 export default {
   extends: Pie,
@@ -68,6 +78,7 @@ export default {
   }
 };
 </script>
+
 
 <style>
 .pie-chart-container {
