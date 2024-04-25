@@ -10,15 +10,18 @@
 </template>
 
 <script setup>
-//
+
 import { ref, onMounted } from 'vue';
 import { Bar } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale);
 
+
+
 const apiUrl = "https://data.cityofnewyork.us/resource/uip8-fykc.json";
 const chartData = ref({
+
   labels: [],
   datasets: [{
     label: 'Number of Arrests',
@@ -48,7 +51,7 @@ onMounted(async () => {
   try {
     const res = await fetch(apiUrl);
     const data = await res.json();
-    
+    console.log(data)
   
     const groupedData = {};
     data.forEach(item => {

@@ -1,7 +1,4 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
+
 <template>
  <header>
     <div>
@@ -9,22 +6,20 @@ import HelloWorld from './components/HelloWorld.vue'
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <router-link to="/pie-chart">
-      <v-card>
-        <v-card-title>Pie Chart Page</v-card-title>
+        <RouterLink to="/pie-chart">Pie Chart Page</RouterLink>
+ 
       
-      </v-card>
-    </router-link>
-    <router-view></router-view>
+
       </nav>
     </div>
     </header>
   <BarChart />
-
+  <Pie />
 </template>
 
 <script>
 import BarChart from './components/icons/BarChart.vue'
+import PieChart from './views/PieChartPage.vue'
 import { Bar, Pie } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js';
 
@@ -33,6 +28,7 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 export default {
   name: 'App',
   components: { BarChart },
+  compontens: { PieChart }
   
 }
 </script>

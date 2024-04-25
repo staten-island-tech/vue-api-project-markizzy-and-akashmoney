@@ -8,7 +8,7 @@ import BarChart from '@/components/icons/BarChart.vue'
 
 <template>
   <div class = "page">
-    <h1>Arrest Data</h1>
+
   </div>
 </template>
 
