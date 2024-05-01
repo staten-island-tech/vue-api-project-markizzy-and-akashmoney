@@ -19,6 +19,7 @@
 
 <script>
 import BarChart from './components/icons/BarChart.vue'
+import DoughnutChart from './components/icons/DoughnutChart.vue';
 import { Bar, Doughnut, } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, DoughnutController, ArcElement } from 'chart.js';
 
