@@ -42,16 +42,10 @@ datasets: [{
 
 
 
-
-
-
 onMounted(async () => {
 try {
   const res = await fetch(apiUrl);
   const data = await res.json();
-
-
-
 
   const arrestsByBorough = {};
   data.forEach(item => {
@@ -64,9 +58,6 @@ try {
   });
 
 
-
-
- 
   const boroughLabels = Object.keys(arrestsByBorough);
   const arrestCounts = Object.values(arrestsByBorough);
  
@@ -83,8 +74,6 @@ try {
 });
 
 
-
-
 function generateBackgroundColors(count) {
 const colors = [];
 for (let i = 0; i < count; i++) {
@@ -93,12 +82,6 @@ for (let i = 0; i < count; i++) {
 }
 return colors;
 }
-
-
-
-
-
-
 
 
 </script>

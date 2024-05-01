@@ -6,7 +6,7 @@
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/pie-chart">Pie Chart Page</RouterLink>
+        <RouterLink to="/doughnut-chart">Doughnut Chart Page</RouterLink>
  
       
 
@@ -14,7 +14,7 @@
     </div>
     </header>
   <BarChart />
-  <DoughnutChart />
+  <Doughnut />
 </template>
 
 <script>
@@ -22,8 +22,6 @@ import BarChart from './components/icons/BarChart.vue'
 import DoughnutChart from './components/icons/DoughnutChart.vue';
 import { Bar, Doughnut, } from 'vue-chartjs';
 import { Chart as ChartJS, Title, Tooltip, Legend, DoughnutController, ArcElement } from 'chart.js';
-
-
 
 export default {
   name: 'App',
